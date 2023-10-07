@@ -61,7 +61,6 @@ public class FFmpegKitConfigTest {
             "                          --disable-xmm-clobber-test\n" +
             "                          --disable-debug\n" +
             "                          --disable-neon-clobber-test\n" +
-            "                          --disable-programs\n" +
             "                          --disable-postproc\n" +
             "                          --disable-doc\n" +
             "                          --disable-htmlpages\n" +
