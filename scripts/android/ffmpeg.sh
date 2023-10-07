@@ -346,7 +346,8 @@ if [[ -n ${FFMPEG_KIT_LTS_BUILD} ]] && [[ ${API} -lt 18 ]]; then
 fi
 
 # ALWAYS BUILD SHARED LIBRARIES
-BUILD_LIBRARY_OPTIONS="--disable-static --enable-shared"
+# BUILD_LIBRARY_OPTIONS="--disable-static --enable-shared"
+BUILD_LIBRARY_OPTIONS="--enable-static --disable-shared"
 
 # OPTIMIZE FOR SPEED INSTEAD OF SIZE
 if [[ -z ${FFMPEG_KIT_OPTIMIZED_FOR_SPEED} ]]; then
@@ -437,6 +438,9 @@ fi
   --enable-jni \
   --enable-optimizations \
   --enable-swscale \
+  --enable-nonfree \
+  --enable-gpl \
+  --enable-small \
   ${BUILD_LIBRARY_OPTIONS} \
   --enable-pthreads \
   --enable-v4l2-m2m \
@@ -446,7 +450,8 @@ fi
   --disable-xmm-clobber-test \
   ${DEBUG_OPTIONS} \
   --disable-neon-clobber-test \
-  --disable-programs \
+  --disable-ffprobe \
+  --disable-ffnvcodec \
   --disable-postproc \
   --disable-doc \
   --disable-htmlpages \

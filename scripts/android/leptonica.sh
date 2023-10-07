@@ -38,7 +38,6 @@ fi
   --enable-static \
   --disable-shared \
   --disable-fast-install \
-  --disable-programs \
   --host="${HOST}" || return 1
 
 make -j$(get_cpu_count) || return 1
