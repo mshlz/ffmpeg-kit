@@ -50,7 +50,7 @@ RUN $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "build-tools;${ANDROID_BUI
 
 # install Android NDK
 # versions from ffmpeg-kit CI: 'r22b-linux-x86_64', 'r23b-linux', 'r24-linux', 'r25b-linux'
-ENV NDK_VERSION_TO_DOWNLOAD r23b-linux
+ENV NDK_VERSION_TO_DOWNLOAD r22b-linux-x86_64
 RUN curl "https://dl.google.com/android/repository/android-ndk-${NDK_VERSION_TO_DOWNLOAD}.zip" -o ndk.zip && \
     unzip -q -o ndk.zip -d .ndk
 RUN echo "export ANDROID_NDK_ROOT=/.ndk/$(ls .ndk)" >> ~/.bashrc

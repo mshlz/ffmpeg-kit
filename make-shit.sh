@@ -11,4 +11,4 @@
 name=make_android_ffmpeg
 
 docker build -t $name . &&
-docker run -v $PWD/__prebuilt-$(date +%s):/var/app/prebuilt/ $name bash -c "ANDROID_NDK_ROOT=/.ndk/android-ndk-r23b ./android.sh -d --enable-android-media-codec --enable-android-zlib --disable-x86-64 --disable-x86 --disable-arm-v7a --disable-arm-v7a-neon" 
+docker run -v $PWD/__prebuilt-$(date +%s):/var/app/prebuilt/ $name bash -c "ANDROID_NDK_ROOT=/.ndk/android-ndk-r22b ./android.sh -d --enable-android-media-codec --enable-android-zlib --enable-gpl --enable-x265 --enable-x264 --disable-x86-64 --disable-x86 --disable-arm-v7a --disable-arm-v7a-neon" 
